@@ -8,37 +8,37 @@ If you already have access to a server where the project can be deployed note th
 
 ### Install Virtual Box
 
-Install virtual box (https://www.virtualbox.org/wiki/Downloads)[here]. Ensure you download the correct version for your operating system.
+Install virtual box [here](https://www.virtualbox.org/wiki/Downloads). Ensure you download the correct version for your operating system.
 
 ### Install Vagrant
 
 Vagrant will configure the previously installed Virtual Box and set up a shared directory between your host computer and the virtual machine.
 
-Install vagrant (https://www.vagrantup.com/downloads.html)[here]. Ensure you download the correct version for your operating system.
+Install vagrant [here](https://www.vagrantup.com/downloads.html). Ensure you download the correct version for your operating system.
 
 ### Download the Virtual Machine Configuration
 
-Download the configuration files (https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip)[here]. 
+Download the configuration files [here](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip). 
 
-This file will now be stored in your downloads folder. Move this file to a directory that you would like to work from. 
+This file might be stored in your downloads folder. Move this file to a directory that you would like to work from. 
 UnZip the file and `cd` into the vagrant directory.
 
-- start the machine using the `vagrant up` command. This will trigger the installation of the Virtual Machine and all dependencies required for this project. 
+- Start the machine using the `vagrant up` command. The command will trigger the installation of the Virtual Machine and all dependencies required for this project. 
 
-- Once the installation has completed you can access the virtual machine by typing the command `vagrant ssh`
+- Once the installation has completed, you can access the virtual machine by typing the command `vagrant ssh`
 
 ## Dependencies
 
-- postgresql
+- PostgreSQL
 - python3, python3-pip
-	- `pip3 install --upgrade pip`
-	- `pip3 install flask packaging oauth2client redis passlib flask-httpauth`
-	- `pip3 install sqlalchemy flask-sqlalchemy psycopg2-binary bleach requests`
+    - `pip3 install --upgrade pip`
+    - `pip3 install flask packaging oauth2client redis passlib flask-httpauth`
+    - `pip3 install sqlalchemy flask-sqlalchemy psycopg2-binary bleach requests`
 - Git
 
 ### Required SQL Files
 
-Download the required SQL file (https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)[here]
+Download the required SQL file [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 - UnZip the file in your `vagrant` directory.
 - On your server navigate `cd` into the `/vagrant` directory
 - Type `psql` to connect to the SQL server
