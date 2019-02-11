@@ -34,4 +34,67 @@ UnZip the file and `cd` into the vagrant directory.
 	- `pip3 install --upgrade pip`
 	- `pip3 install flask packaging oauth2client redis passlib flask-httpauth`
 	- `pip3 install sqlalchemy flask-sqlalchemy psycopg2-binary bleach requests`
-- Git	
+- Git
+
+### Required SQL Files
+
+Download the required SQL file (https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)[here]
+- UnZip the file in your `vagrant` directory.
+- On your server navigate `cd` into the `/vagrant` directory
+- Type `psql` to connect to the SQL server
+- Load the SQL file into the SQL server using the command `psql -d news -f newsdata.sql`
+
+## Usage
+
+If you have got this far, well done! We will now run the `logs_analysis.py` program on our server.
+
+### Run the Program
+
+```
+python3 logs_analysis.py
+```
+
+### Required Database Views
+
+**total_log:**
+
+```
+CREATE VIEW total_log AS
+SELECT TO_CHAR(time, 'MON-DD-YYYY') AS date, COUNT(*) as log_total
+FROM log
+GROUP BY date;
+```
+
+**error_log:**
+
+```
+CREATE VIEW error_log AS
+SELECT TO_CHAR(time, 'MON-DD-YYYY') AS date, COUNT(*) as error_total
+FROM log
+WHERE status not like '%200%'
+GROUP BY date;
+```
+
+### Expected Output
+
+**What are the most popular three articles of all time?**
+
+"Candidate is jerk, alleges rival" -- 338647 views
+
+"Bears love berries, alleges bear" -- 253801 views
+
+"Bad things gone, say good people" -- 170098 views
+
+**Who are the most popular article authors of all time?**
+
+Markoff Chaney -- 84557 views
+
+Anonymous Contributor -- 170098 views
+
+Rudolf von Treppenwitz -- 423457 views
+
+Ursula La Multa -- 507594 views
+
+**On which days did more than '1%' of requests lead to errors?**
+
+JUL-17-2016 -- 2.00 %

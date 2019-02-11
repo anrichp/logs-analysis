@@ -81,6 +81,7 @@ def request_errors():
     f.write("On which days did more than '1%' of requests lead to errors?\n")
     for i in range(len(results)):
         print (str(results[i][0]) + ' -- ' + str(results[i][1]) + ' %')
+        f.write(str(results[i][0]) + ' -- ' + str(results[i][1]) + ' %')
     f.close()
     connection.close()
 

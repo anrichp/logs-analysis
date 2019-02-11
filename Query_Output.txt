@@ -10,4 +10,4 @@ Rudolf von Treppenwitz -- 423457 views
 Ursula La Multa -- 507594 views
 
 On which days did more than '1%' of requests lead to errors?
-JUL-17-2016 -- 2 %
+JUL-17-2016 -- 2.00 %
