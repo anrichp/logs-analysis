@@ -8,13 +8,13 @@ If you already have access to a server where the project can be deployed note th
 
 ### Install Virtual Box
 
-Install virtual box [here](https://www.virtualbox.org/wiki/Downloads). Ensure you download the correct version for your operating system.
+Download virtual box [here](https://www.virtualbox.org/wiki/Downloads). Ensure you download the correct version for your operating system.
 
 ### Install Vagrant
 
 Vagrant will configure the previously installed Virtual Box and set up a shared directory between your host computer and the virtual machine.
 
-Install vagrant [here](https://www.vagrantup.com/downloads.html). Ensure you download the correct version for your operating system.
+Download vagrant [here](https://www.vagrantup.com/downloads.html). Ensure you download the correct version for your operating system.
 
 ### Download the Virtual Machine Configuration
 
