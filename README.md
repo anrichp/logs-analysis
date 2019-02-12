@@ -60,7 +60,7 @@ python3 logs_analysis.py
 
 ```
 CREATE VIEW total_log AS
-SELECT TO_CHAR(time, 'MON-DD-YYYY') AS date, COUNT(*) as log_total
+SELECT TO_CHAR(time,'FMMonth DD, YYYY') AS date, COUNT(*) as log_total
 FROM log
 GROUP BY date;
 ```
@@ -69,7 +69,7 @@ GROUP BY date;
 
 ```
 CREATE VIEW error_log AS
-SELECT TO_CHAR(time, 'MON-DD-YYYY') AS date, COUNT(*) as error_total
+SELECT TO_CHAR(time,'FMMonth DD, YYYY') AS date, COUNT(*) as error_total
 FROM log
 WHERE status not like '%200%'
 GROUP BY date;
@@ -97,4 +97,4 @@ Ursula La Multa -- 507594 views
 
 **On which days did more than '1%' of requests lead to errors?**
 
-JUL-17-2016 -- 2.00 %
+JUL-17-2016 -- 2%
