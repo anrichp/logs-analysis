@@ -68,7 +68,7 @@ def request_errors():
     cursor = connection.cursor()
     # Execure Query
     cursor.execute("select error_log.date,"
-                   " round(100 * error_total / log_total, 2) as percentage"
+                   " round(100.00 * error_total / log_total, 2) as percentage"
                    " from total_log, error_log"
                    " where total_log.date = error_log.date"
                    " and error_total > log_total/100")
