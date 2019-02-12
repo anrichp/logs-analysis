@@ -74,14 +74,15 @@ def request_errors():
                    " and error_total > log_total/100")
     # Results fetch
     results = cursor.fetchall()
-    print (results)
     # Open file and append to the end of the file
     f = open('Query_Output.txt', 'a')
     print("On which days did more than '1%' of requests lead to errors?\n")
     f.write("On which days did more than '1%' of requests lead to errors?\n")
     for i in range(len(results)):
-        print (str(results[i][0]) + ' -- ' + str(results[i][1]) + ' %')
-        f.write(str(results[i][0]) + ' -- ' + str(results[i][1]) + ' %')
+        date = results[i][0]
+        percentage = results[i][1]
+        f.write("%s -- %d" % (date, percentage) + "%")
+        print("%s -- %d" % (date, percentage) + "%")
     f.close()
     connection.close()
 
