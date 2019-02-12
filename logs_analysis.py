@@ -44,7 +44,7 @@ def popular_authors():
                    " and log.status like '%200%'"
                    " and authors.id = articles.author"
                    " group by authors.name"
-                   " order by views")
+                   " order by views desc")
     # Results fetch
     results = cursor.fetchall()
     # Open file and append to the end of the file
